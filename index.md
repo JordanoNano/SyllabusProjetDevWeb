@@ -1,5 +1,5 @@
 # Syllabus - Projet de développement WEB - Jordano Modesto
-
+![Logo EAFC](image\eafc_logo.jpg)
 Bienvenue dans le syllabus dédié au cours "Projet de développement WEB". Ce cours vous permettra d'apprendre à créer une application web complète en utilisant les technologies modernes du développement web. Vous trouverez ici des informations détaillées sur les différents outils et technologies que nous utiliserons lors des différentes sessions de cours.
 
 ## Objectifs du Cours
@@ -16,7 +16,6 @@ Bienvenue dans le syllabus dédié au cours "Projet de développement WEB". Ce c
 2. [Git](git.md)
 3. [SQL Server](sqlServer.md)
 
----
 
 ### 1. [Visual Studio Code](visualStudioCode.md)
 Cette page fournit des informations sur l'installation et la configuration de **Visual Studio Code**, un éditeur de code léger mais puissant, utilisé pour le développement de notre projet. Vous y trouverez les étapes pour :
@@ -56,16 +55,11 @@ Cette page couvre l'installation et la configuration de **SQL Server** ainsi que
 - Mise à jour de la base de données avec `dotnet ef database update`.
 - Ajout et manipulation de données dans la base via des modèles.
 
----
 
 ## Conseils pour le Suivi du Cours
 
-- **Travail en groupe** : Le projet peut être réalisé en groupes. Chaque groupe doit choisir un responsable Git pour gérer les commits et la gestion des branches.
 - **Pratique régulière** : La clé pour maîtriser ces outils est de les utiliser régulièrement. Assurez-vous de suivre les étapes décrites pour chaque technologie à chaque session.
 - **Projets de développement** : À la fin de chaque module, un projet ou exercice pratique sera attribué. Ces projets sont essentiels pour mettre en pratique les concepts appris en cours.
-- **Questions et assistance** : Si vous rencontrez des difficultés techniques ou conceptuelles, n'hésitez pas à me contacter par email ou pendant les heures de bureau.
-
----
 
 ## Conclusion
 
