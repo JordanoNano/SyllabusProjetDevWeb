@@ -16,7 +16,7 @@ Il permet de développer des applications :
 
 ---
 
-## ** L'Architecture MVC (Model-View-Controller)**
+## **L'Architecture MVC (Model-View-Controller)**
 **MVC (Modèle-Vue-Contrôleur)** est un **design pattern** qui sépare une application en trois couches :
 1. **Modèle (Model)** : Gère les **données** et la **logique métier**.
 2. **Vue (View)** : Gère **l'affichage** et l'interface utilisateur.
@@ -30,7 +30,7 @@ Il permet de développer des applications :
 
 ---
 
-## ** Structure d’un projet ASP.NET Core MVC**
+## **Structure d’un projet ASP.NET Core MVC**
 Lorsqu’on crée un projet **ASP.NET Core MVC**, voici la structure typique :
 ![image](https://github.com/user-attachments/assets/8fb40a21-a090-48dd-9d37-a6e2eeaa7405)
 
