@@ -1,6 +1,6 @@
 #  Documentation : ASP.NET Core et l'Architecture MVC
 
-## ** Introduction à ASP.NET Core**
+## **Introduction à ASP.NET Core**
 **ASP.NET Core** est un **framework open-source** développé par Microsoft pour **créer des applications web modernes, performantes et multiplateformes**.  
 Il permet de développer des applications :
 - Web (MVC, Razor Pages, Blazor)
