@@ -49,10 +49,10 @@ public class Utilisateur
     public string Email { get; set; }
     
     [Required]
-    public string MotDePasse { get; set; } // Le mot de passe sera haché
+    public string MotDePasse { get; set; } 
     
     [Required]
-    public string Role { get; set; } // Client ou Admin
+    public string Role { get; set; }
     
     public string Adresse { get; set; }
 }
@@ -69,7 +69,7 @@ public class Produit
     public int Stock { get; set; }
     public int CategorieId { get; set; }
     public Categorie Categorie { get; set; }
-    public string Image { get; set; } // URL de l’image
+    public string Image { get; set; } 
 }
 ```
 
@@ -111,9 +111,9 @@ public class Commande
     public int Id { get; set; }
     public int UtilisateurId { get; set; }
     public Utilisateur Utilisateur { get; set; }
-    public DateTime DateCommande { get; set; } = DateTime.Now;
+    public DateTime DateCommande { get; set; } 
     public decimal Total { get; set; }
-    public string Statut { get; set; } // En cours, expédié, annulé, etc.
+    public string Statut { get; set; } 
 }
 ```
 
@@ -137,8 +137,8 @@ public class Paiement
     public int CommandeId { get; set; }
     public Commande Commande { get; set; }
     public decimal Montant { get; set; }
-    public string Statut { get; set; } // Payé, refusé, en attente
-    public string Methode { get; set; } // Carte, PayPal, etc.
+    public string Statut { get; set; } 
+    public string Methode { get; set; }
 }
 ```
 
@@ -181,7 +181,7 @@ namespace MonApplication.Data
 Dans le fichier `appsettings.json`, ajoutez la **chaîne de connexion** :
 ```json
 "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Database=ECommerceDB;Trusted_Connection=True;MultipleActiveResultSets=true"
+    "DefaultConnection": "Server=localhost;Database=ECommerceDB;Trusted_Connection=True;MultipleActiveResultSets=true";TrustServerCertificate=True"
 }
 ```
 
