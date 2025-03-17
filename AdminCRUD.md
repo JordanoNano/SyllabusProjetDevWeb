@@ -179,7 +179,7 @@ public class AdminUtilisateurController : Controller
 </table>
 
 <a href="/admin/utilisateurs/create">Ajouter un nouvel utilisateur</a>
-
+```
 `Create.cshtml`
 ```csharp
 @model MonApplication.Models.Utilisateur
