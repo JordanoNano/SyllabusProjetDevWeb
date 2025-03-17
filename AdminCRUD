@@ -1,1 +1,130 @@
+# Documentation : CRUD sur `AdminUtilisateurController.cs` et ses Vues
 
+##Introduction
+Cette page explique en détail le fonctionnement du **contrôleur `AdminUtilisateurController.cs`** ainsi que des **vues associées**.  
+Ce contrôleur permet :
+- **D'afficher la liste des utilisateurs enregistrés**.
+- **De créer un nouvel utilisateur en base de données avec un mot de passe haché**.
+- **De supprimer un utilisateur existant**.
+- **Modifier un utilisateur existant**.
+
+---
+
+##  `AdminUtilisateurController.cs` : Gestion des utilisateurs
+
+### Définition du contrôleur
+Le contrôleur `AdminUtilisateurController` est responsable de la gestion des utilisateurs via l'interface d’administration.  
+Il est accessible via l’URL `/admin/utilisateurs` et contient trois méthodes principales :
+- **`List`** : Affiche tous les utilisateurs enregistrés.
+- **`Create (GET)`** : Affiche un formulaire de création d’utilisateur.
+- **`Create (POST)`** : Traite les données soumises via le formulaire et enregistre l’utilisateur.
+- **`Delete(DELETE)`** : Supprime un utilisateur 
+- **`Patch (PATCH)`** : Traite les données soumises via le formulaire et enregistre l’utilisateur à nouveau.
+
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using MonApplication.Data;
+using MonApplication.Models;
+using BCrypt.Net;
+
+// Définition de la route pour accéder à ce contrôleur via /admin/utilisateurs
+[Route("admin/utilisateurs")]
+public class AdminUtilisateurController : Controller
+{
+    private readonly ECommerceDbContext _context;
+
+    // Constructeur qui injecte le contexte de base de données pour interagir avec la DB
+    public AdminUtilisateurController(ECommerceDbContext context)
+    {
+        _context = context;
+    }
+
+    // Affiche la liste des utilisateurs
+    [HttpGet("list")]
+    public IActionResult List()
+    {
+        // Récupération des utilisateurs dans la base de données
+        var users = _context.Utilisateurs.ToList();
+
+        // Envoi des utilisateurs à la vue "AdminUtilisateur"
+        return View("AdminUtilisateur", users);
+    }
+
+    // Affiche un formulaire vide avec des valeurs par défaut
+    [HttpGet("create")]
+    public IActionResult Create()
+    {
+        return View(new Utilisateur
+        {
+            Nom = string.Empty,
+            Prenom = string.Empty,
+            Email = string.Empty,
+            MotDePasse = string.Empty,
+            Adresse = string.Empty,
+            Role = "Client" // Valeur par défaut
+        });
+    }
+
+    // Traite l'ajout d'un utilisateur
+    [HttpPost("create")]
+    public IActionResult Create(Utilisateur utilisateur)
+    {
+        // Affichage des données reçues pour vérification
+        foreach (var key in Request.Form.Keys)
+        {
+            Console.WriteLine($" {key} = {Request.Form[key]}");
+        }
+
+        // Vérification de la validité du formulaire
+        if (!ModelState.IsValid)
+        {
+            Console.WriteLine("⚠ Erreur de validation !");
+            var errors = ModelState.Values.SelectMany(v => v.Errors)
+                                          .Select(e => e.ErrorMessage)
+                                          .ToList();
+            Console.WriteLine("⚠ Erreurs : " + string.Join(", ", errors));
+            return View(utilisateur);
+        }
+
+        // Hachage du mot de passe pour garantir la sécurité
+        utilisateur.MotDePasse = BCrypt.Net.BCrypt.HashPassword(utilisateur.MotDePasse);
+
+        // Ajout de l'utilisateur en base de données
+        _context.Utilisateurs.Add(utilisateur);
+        _context.SaveChanges();
+
+        // Redirection vers la liste des utilisateurs après l'ajout
+        return RedirectToAction("List");
+    }
+}
+## `AdminUtilisateur.cshtml` : Vue de la liste des utilisateurs
+Cette vue affiche la liste des utilisateurs sous forme de tableau HTML.
+Elle reçoit une `liste d'objets Utilisateur` et affiche chaque utilisateur dans une ligne du tableau.
+
+```
+@using MonApplication.Models
+@model IEnumerable<MonApplication.Models.Utilisateur>
+
+<h2>Liste des utilisateurs</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Email</th>
+        <th>Rôle</th>
+    </tr>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Id</td>
+            <td>@user.Nom</td>
+            <td>@user.Prenom</td>
+            <td>@user.Email</td>
+            <td>@user.Role</td>
+        </tr>
+    }
+</table>
+
+<a href="/admin/utilisateurs/create">Ajouter un nouvel utilisateur</a>
