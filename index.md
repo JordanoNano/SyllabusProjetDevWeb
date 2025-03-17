@@ -5,7 +5,7 @@ Bienvenue dans le syllabus dédié au cours "Projet de développement WEB". Ce c
 ## Objectifs du Cours
 
 À la fin de ce cours, vous serez capable de :
-- Utiliser Visual Studio Code comme éditeur de code principal.
+- Utiliser Visual Studio comme éditeur de code principal.
 - Configurer un dépôt Git pour la gestion de versions.
 - Créer et gérer une base de données avec SQL Server et Entity Framework.
 - Intégrer toutes ces technologies dans un projet de développement web.
@@ -19,14 +19,14 @@ Bienvenue dans le syllabus dédié au cours "Projet de développement WEB". Ce c
 5. [ADMIN - CRUD](AdminCRUD.md)
 
 
-### 1. [Visual Studio Code](visualStudioCode.md)
+### 1. [Visual Studio](visualStudioCode.md)
 Cette page fournit des informations sur l'installation et la configuration de **Visual Studio Code**, un éditeur de code léger mais puissant, utilisé pour le développement de notre projet. Vous y trouverez les étapes pour :
-- Installer Visual Studio Code sur votre machine.
+- Installer Visual Studio sur votre machine.
 - Ajouter des extensions utiles pour le développement web, comme celles pour C#, JavaScript, et SQL.
 - Configurer l'éditeur pour un environnement de développement optimal.
   
 **À noter :**
-- Visual Studio Code est un outil très flexible et vous pouvez y ajouter des extensions selon vos besoins.
+- Visual Studio est un outil très flexible et vous pouvez y ajouter des extensions selon vos besoins.
 - Une section sur le débogage et la gestion des erreurs dans VS Code sera également couverte.
 
 ### 2. [Git](git.md)
