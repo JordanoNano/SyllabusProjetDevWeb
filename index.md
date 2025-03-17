@@ -56,6 +56,21 @@ Cette page couvre l'installation et la configuration de **SQL Server** ainsi que
 - Mise à jour de la base de données avec `dotnet ef database update`.
 - Ajout et manipulation de données dans la base via des modèles.
 
+### 4. [ASP.NET Core et l'Architecture MVC](aspNetCoreMVC.md)
+Cette page présente une introduction à **ASP.NET Core** et à l'architecture **Model-View-Controller (MVC)**, une approche couramment utilisée pour le développement d’applications web en .NET. Vous y trouverez une explication détaillée sur :
+- La structure d’un projet ASP.NET Core et l’organisation des fichiers.
+- Le principe de **Séparation des Préoccupations (Separation of Concerns - SoC)** et son application en MVC.
+- Le rôle de chaque composant **Modèle (Model), Vue (View) et Contrôleur (Controller)**.
+- La gestion des requêtes HTTP et des interactions entre les différentes couches.
+- L’intégration de **Razor** pour la création d’interfaces dynamiques.
+
+**Thèmes abordés :**
+- Introduction à ASP.NET Core et ses avantages (performance, modularité, sécurité).
+- Explication de l’architecture MVC et de son fonctionnement.
+- Organisation d’un projet ASP.NET Core MVC.
+- Définition et rôle des **Modèles, Vues et Contrôleurs**.
+- Cycle de vie d'une requête MVC et interaction entre les composants.
+- Gestion des formulaires, validation des données et communication entre les couches.
 
 ## Conseils pour le Suivi du Cours
 
