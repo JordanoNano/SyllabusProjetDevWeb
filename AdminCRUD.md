@@ -142,8 +142,9 @@ public class AdminUtilisateurController : Controller
         return RedirectToAction("List");
     }
 }
-
+```
 `AdminUtilisateur.cshtml`
+
 ```csharp
 @using MonApplication.Models
 @model IEnumerable<MonApplication.Models.Utilisateur>
@@ -229,3 +230,4 @@ public class AdminUtilisateurController : Controller
 </form>
 
 <a href="/admin/utilisateurs/list">Retour à la liste</a>
+```
