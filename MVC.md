@@ -118,8 +118,3 @@ Lorsqu’on crée un projet **ASP.NET Core MVC**, voici la structure typique :
 - Le **modèle MVC** améliore la **lisibilité, la modularité et la testabilité** des applications.
 - Il sépare la logique métier (`Model`), la gestion des requêtes (`Controller`) et l'affichage (`View`).
 - Cette séparation permet un **développement structuré, évolutif et maintenable**.
-
-
-    Gère l'affichage et la présentation des données.
-    Utilise Razor (.cshtml) pour afficher les données dynamiques.
-    Ne contient pas de logique métier, uniquement du HTML et du C# minimal.
