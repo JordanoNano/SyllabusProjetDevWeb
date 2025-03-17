@@ -219,11 +219,11 @@ app.Run();
 ## Génération de la base de données avec les migrations
 Une fois les modèles et la configuration terminés, il faut générer la base de données avec **EF Core Migrations**.
 
- ** Créer une première migration** :
+ **Créer une première migration** :
 ```sh
 dotnet ef migrations add InitialCreate
 ```
- ** Appliquer la migration pour créer la base de données** :
+ **Appliquer la migration pour créer la base de données** :
 ```sh
 dotnet ef database update
 ```
