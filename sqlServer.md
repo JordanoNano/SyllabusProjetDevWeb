@@ -160,7 +160,7 @@ public class Paiement
 ##   Création du `DbContext`
 Le **`DbContext`** est la classe qui permet d'interagir avec la base de données.
 
-La méthode OnModelCreating est utilisée pour définir une clé primaire qui repose sur plusieurs colonnes à la fois, garantissant ainsi qu’une même combinaison de valeurs (ex : PanierId et ProduitId dans PanierProduit) ne puisse pas apparaître plusieurs fois, ce qui empêche les doublons dans une relation entre deux entités.
+La méthode `OnModelCreating` est utilisée pour définir une clé primaire qui repose sur plusieurs colonnes à la fois, garantissant ainsi qu’une même combinaison de valeurs (ex : PanierId et ProduitId dans PanierProduit) ne puisse pas apparaître plusieurs fois, ce qui empêche les doublons dans une relation entre deux entités.
 La combinaison PanierId-ProduitId devient unique, donc un même produit ne peut apparaître qu'une seule fois par panier.
 
  **Fichier `ECommerceDbContext.cs`** :
