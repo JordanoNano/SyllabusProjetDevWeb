@@ -1,4 +1,4 @@
-# Documentation sur l'installation de Visual Studio Code et la gestion des outils .NET, Git et SQL Server
+# Documentation sur l'installation de Visual Studio Code et la gestion des outils .NET
 
 ## 1) Installer Visual Studio Code via le Microsoft Store
 
