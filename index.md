@@ -12,7 +12,7 @@ Bienvenue dans le syllabus dédié au cours "Projet de développement WEB". Ce c
 
 ## Table des matières
 
-1. [Visual Studio Code](visualStudioCode.md)
+1. [Visual Studio](visualStudioCode.md)
 2. [Git](git.md)
 3. [SQL Server](sqlServer.md)
 4. [MVC](MVC.md)
