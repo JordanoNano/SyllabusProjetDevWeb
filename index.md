@@ -1,5 +1,5 @@
 # Syllabus - Projet de développement WEB - Jordano Modesto
-<img src="images/logo.png" alt="Logo du projet" width="200"/>
+<img src="image/logo.png" alt="Logo du projet" width="200"/>
 Bienvenue dans le syllabus dédié au cours "Projet de développement WEB". Ce cours vous permettra d'apprendre à créer une application web complète en utilisant les technologies modernes du développement web. Vous trouverez ici des informations détaillées sur les différents outils et technologies que nous utiliserons lors des différentes sessions de cours.
 
 ## Objectifs du Cours
