@@ -122,6 +122,17 @@ dotnet ef database update
 5. **L'utilisateur voit le résultat** (ex: liste des utilisateurs affichée dans une page web).
 ![image](https://github.com/user-attachments/assets/03737c57-212b-4ef8-b264-e9934b841ad7)
 
+    **Étape 1** : Une requête HTTP est envoyée au contrôleur.
+    **Étape 2** : Le contrôleur fait une demande de données au modèle.
+    **Étape 3** : Le modèle renvoie les données demandées au contrôleur.
+    **Étape 4** : Le contrôleur envoie ces données à la vue.
+    **Étape 5** : La vue renvoie la réponse HTML au client (navigateur).
+
+Il met en évidence la séparation des responsabilités
+
+    Le contrôleur orchestre le traitement : il reçoit la requête, appelle le modèle et renvoie la vue.
+    Le modèle contient la logique métier et gère l’accès aux données.
+    La vue est uniquement responsable de l'affichage.
 ---
 ### **Qu'est-ce que `IActionResult` ?**
 - `IActionResult` est une interface qui définit le type de réponse qu'un contrôleur peut retourner.
