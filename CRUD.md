@@ -83,49 +83,6 @@ public class AdminUtilisateurController : Controller
         return RedirectToAction("List");
     }
 
-    // Affiche le formulaire de modification avec les informations existantes
-    [HttpGet("edit/{id}")]
-    public IActionResult Edit(int id)
-    {
-        var utilisateur = _context.Utilisateurs.Find(id);
-        if (utilisateur == null)
-        {
-            return NotFound();
-        }
-        return View(utilisateur);
-    }
-
-    // Met à jour un utilisateur en base de données
-    [HttpPost("edit/{id}")]
-    public IActionResult Edit(int id, Utilisateur utilisateur)
-    {
-        if (!ModelState.IsValid)
-        {
-            return View(utilisateur);
-        }
-
-        var existingUser = _context.Utilisateurs.Find(id);
-        if (existingUser == null)
-        {
-            return NotFound();
-        }
-
-        existingUser.Nom = utilisateur.Nom;
-        existingUser.Prenom = utilisateur.Prenom;
-        existingUser.Email = utilisateur.Email;
-        existingUser.Adresse = utilisateur.Adresse;
-        existingUser.Role = utilisateur.Role;
-
-        if (!string.IsNullOrEmpty(utilisateur.MotDePasse))
-        {
-            existingUser.MotDePasse = BCrypt.Net.BCrypt.HashPassword(utilisateur.MotDePasse);
-        }
-
-        _context.SaveChanges();
-
-        return RedirectToAction("List");
-    }
-
     // Supprime un utilisateur
     [HttpPost("delete/{id}")]
     public IActionResult Delete(int id)
@@ -230,4 +187,169 @@ public class AdminUtilisateurController : Controller
 </form>
 
 <a href="/admin/utilisateurs/list">Retour à la liste</a>
+```
+
+# Mise à jour d'un utilisateur (UPDATE) - ASP.NET Core MVC  
+
+## Introduction  
+
+Cette section explique le **fonctionnement de la mise à jour d'un utilisateur** en utilisant :  
+- Un **ViewModel (`UtilisateurViewModel`)** pour séparer les données de la vue et du modèle.  
+- Une **gestion du mot de passe sécurisée** (si laissé vide, il n'est pas modifié).  
+
+---
+
+## **Création du ViewModel `UtilisateurViewModel`**  
+
+Le ViewModel permet de **séparer les données de la vue et du modèle de base de données**.  
+Cela évite de manipuler directement l'ID et le mot de passe dans la vue.
+
+**Fichier : `Models/ViewModels/UtilisateurViewModel.cs`**  
+
+```csharp
+using System.ComponentModel.DataAnnotations;
+
+namespace MonApplication.Models.ViewModels
+{
+    public class UtilisateurViewModel
+    {
+        [Required]
+        public string Nom { get; set; }
+
+        [Required]
+        public string Prenom { get; set; }
+
+        [Required, EmailAddress]
+        public string Email { get; set; }
+
+        public string? MotDePasse { get; set; } // Pas obligatoire
+
+        public string Adresse { get; set; }
+
+        [Required]
+        public string Role { get; set; }
+    }
+}
+```
+```csharp
+[HttpGet("edit/{id}")]
+public IActionResult Edit(int id)
+{
+    var utilisateur = _context.Utilisateurs.Find(id);
+    if (utilisateur == null)
+    {
+        return NotFound();
+    }
+
+    // Convertir en ViewModel
+    var viewModel = new UtilisateurViewModel
+    {
+        Nom = utilisateur.Nom,
+        Prenom = utilisateur.Prenom,
+        Email = utilisateur.Email,
+        Adresse = utilisateur.Adresse,
+        Role = utilisateur.Role
+    };
+
+    return View(viewModel);
+}
+
+[HttpPost("edit/{id}")]
+public IActionResult Edit(int id, UtilisateurViewModel utilisateurViewModel)
+{
+    Console.WriteLine($"🔹 Modification utilisateur ID={id}, Nouveau Nom={utilisateurViewModel.Nom}, Email={utilisateurViewModel.Email}");
+
+    if (!ModelState.IsValid)
+    {
+        Console.WriteLine("⚠ ModelState invalide !");
+        foreach (var error in ModelState)
+        {
+            Console.WriteLine($"🔸 {error.Key}: {string.Join(", ", error.Value.Errors.Select(e => e.ErrorMessage))}");
+        }
+        return View(utilisateurViewModel);
+    }
+
+    var existingUser = _context.Utilisateurs.Find(id);
+    if (existingUser == null)
+    {
+        return NotFound();
+    }
+
+    Console.WriteLine("✅ Utilisateur trouvé, mise à jour en cours...");
+
+    existingUser.Nom = utilisateurViewModel.Nom;
+    existingUser.Prenom = utilisateurViewModel.Prenom;
+    existingUser.Email = utilisateurViewModel.Email;
+    existingUser.Adresse = utilisateurViewModel.Adresse;
+    existingUser.Role = utilisateurViewModel.Role;
+
+    // Vérifier si un mot de passe a été fourni
+    if (!string.IsNullOrEmpty(utilisateurViewModel.MotDePasse))
+    {
+        existingUser.MotDePasse = BCrypt.Net.BCrypt.HashPassword(utilisateurViewModel.MotDePasse);
+        Console.WriteLine("🔒 Mot de passe mis à jour !");
+    }
+
+    try
+    {
+        _context.SaveChanges();
+        Console.WriteLine("✅ Utilisateur mis à jour avec succès !");
+        return RedirectToAction("List");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"❌ Erreur lors de la mise à jour : {ex.Message}");
+        return View(utilisateurViewModel);
+    }
+}
+
+```
+`Edit.cshtml`
+```csharp
+@model MonApplication.Models.ViewModels.UtilisateurViewModel
+
+<h2>Modifier un utilisateur</h2>
+
+<form method="post" asp-action="Edit">
+    <div>
+        <label>Nom</label>
+        <input type="text" asp-for="Nom" name="Nom" value="@Model.Nom" required>
+        <span asp-validation-for="Nom" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Prénom</label>
+        <input type="text" asp-for="Prenom" name="Prenom" value="@Model.Prenom" required>
+        <span asp-validation-for="Prenom" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Email</label>
+        <input type="email" asp-for="Email" name="Email" value="@Model.Email" required>
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Mot de passe (laisser vide pour ne pas changer)</label>
+        <input type="password" asp-for="MotDePasse" name="MotDePasse">
+        <span asp-validation-for="MotDePasse" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Adresse</label>
+        <input type="text" asp-for="Adresse" name="Adresse" value="@Model.Adresse">
+        <span asp-validation-for="Adresse" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Rôle</label>
+        <select asp-for="Role" name="Role">
+            <option value="Client" selected="@(Model.Role == "Client")">Client</option>
+            <option value="Admin" selected="@(Model.Role == "Admin")">Admin</option>
+        </select>
+        <span asp-validation-for="Role" class="text-danger"></span>
+    </div>
+
+    <button type="submit">Mettre à jour</button>
+</form>
 ```
