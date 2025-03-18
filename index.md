@@ -86,6 +86,6 @@ Si vous constatez une erreur ou si vous avez besoin de clarifications, n'hésite
 
 ## Sources et divers liens
 
-[https://learn.microsoft.com/fr-fr/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-9.0](Documentation officielle)
-[https://flexboxfroggy.com/#fr] Apprendre les FlexBox
+[Documentation officielle Microsoft](https://learn.microsoft.com/fr-fr/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-9.0))
+[Flebox](https://flexboxfroggy.com/#fr)
 
