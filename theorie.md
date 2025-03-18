@@ -1,5 +1,3 @@
-# Cours : Introduction à ASP.NET Core MVC
-
 ## 1. Qu'est-ce qu'un Framework ?
 Un **framework** est un ensemble d'outils, de bibliothèques et de conventions qui facilitent le développement d'applications en imposant une structure prédéfinie.
 
