@@ -1,4 +1,4 @@
-# Tutoriel : Intégrer et Utiliser Bootstrap dans ASP.NET Core MVC
+# Tutoriel : Intégrer et utiliser Bootstrap dans ASP.NET Core MVC
 
 ## Objectif
 Ce tutoriel vous guidera pas à pas pour **intégrer Bootstrap** dans un projet **ASP.NET Core MVC** et l’utiliser efficacement pour styliser vos vues.
