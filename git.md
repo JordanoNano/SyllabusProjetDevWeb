@@ -91,5 +91,9 @@ git push -u origin dev-test
 ```
 
 ---
+Si vous rencontrez un problème avec le branche main qui n'est pas reliée à la branche distance :
+```bash
+git branch --set-upstream-to=origin/main main
+```
 
 **Votre projet est maintenant versionné avec Git et synchronisé avec GitHub !**
