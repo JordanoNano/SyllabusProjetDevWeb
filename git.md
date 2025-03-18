@@ -91,7 +91,7 @@ git push -u origin dev-test
 ```
 
 ---
-Si vous rencontrez un problème avec le branche main qui n'est pas reliée à la branche distance :
+Si vous rencontrez un problème avec la branche main qui n'est pas reliée à la branche distante :
 ```bash
 git branch --set-upstream-to=origin/main main
 ```
