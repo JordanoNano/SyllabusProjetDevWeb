@@ -84,4 +84,8 @@ En suivant ce syllabus et en travaillant sur les outils et technologies décrits
 
 Si vous constatez une erreur ou si vous avez besoin de clarifications, n'hésitez pas à revenir vers moi !
 
+## Sources et divers liens
+
+[https://learn.microsoft.com/fr-fr/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-9.0](Documentation officielle)
+[https://flexboxfroggy.com/#fr] Apprendre les FlexBox
 
