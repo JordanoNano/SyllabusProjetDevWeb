@@ -120,6 +120,7 @@ dotnet ef database update
    - Il prépare une réponse sous forme de **vue HTML**.
 4. **La vue est générée** avec les données du modèle et envoyée au navigateur.
 5. **L'utilisateur voit le résultat** (ex: liste des utilisateurs affichée dans une page web).
+![image](https://github.com/user-attachments/assets/03737c57-212b-4ef8-b264-e9934b841ad7)
 
 ---
 ### **Qu'est-ce que `IActionResult` ?**
