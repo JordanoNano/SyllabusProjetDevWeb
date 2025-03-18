@@ -1,5 +1,23 @@
 #  Documentation : ASP.NET Core et l'Architecture MVC
 
+## Qu'est-ce qu'un Framework ?
+Un **framework** est un ensemble d'outils, de bibliothèques et de conventions qui facilitent le développement d'applications en imposant une structure prédéfinie.
+
+### **Caractéristiques d'un framework :**
+- Offre une architecture préétablie.
+- Fournit des bibliothèques et des outils intégrés.
+- Facilite la gestion des dépendances.
+- Encourage les bonnes pratiques de développement.
+
+**Exemples de frameworks populaires :**
+- **ASP.NET Core MVC** (pour les applications web en .NET)
+- **Django** (Python)
+- **Spring Boot** (Java)
+- **Laravel** (PHP)
+
+Un framework permet de **gagner du temps**, d'éviter de "réinventer la roue" et d'avoir une **architecture propre et modulaire**.
+
+---
 ## **Introduction à ASP.NET Core**
 **ASP.NET Core** est un **framework open-source** développé par Microsoft pour **créer des applications web modernes, performantes et multiplateformes**.  
 Il permet de développer des applications :
@@ -38,8 +56,6 @@ Lorsqu’on crée un projet **ASP.NET Core MVC**, voici la structure typique :
 ---
 
 
----
-
 ## **Les Composants du Modèle MVC**
 
 ### **Le Modèle (Model)**
@@ -48,6 +64,18 @@ Lorsqu’on crée un projet **ASP.NET Core MVC**, voici la structure typique :
 - Définit **la structure des objets** utilisés dans l'application.
 - Interagit avec la **base de données** via **Entity Framework Core**.
 - Implémente des **contraintes de validation** pour garantir l'intégrité des données.
+
+## Les Modèles et la Base de Données
+Un **modèle** représente une entité dans la base de données.
+
+### **Entity Framework Core : Gestion de la base de données**
+ASP.NET Core utilise **Entity Framework Core** pour interagir avec la base de données.
+
+**Génération de la base de données** :
+```sh
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+```
 
 #### **Principes clés**
 - Utilisation des **Data Annotations** (`[Required]`, `[StringLength]`, `[EmailAddress]`, etc.).
@@ -92,6 +120,15 @@ Lorsqu’on crée un projet **ASP.NET Core MVC**, voici la structure typique :
    - Il prépare une réponse sous forme de **vue HTML**.
 4. **La vue est générée** avec les données du modèle et envoyée au navigateur.
 5. **L'utilisateur voit le résultat** (ex: liste des utilisateurs affichée dans une page web).
+
+---
+### **Qu'est-ce que `IActionResult` ?**
+- `IActionResult` est une interface qui définit le type de réponse qu'un contrôleur peut retourner.
+- Exemples de **retours possibles** :
+  - `return View();` (Retourne une vue HTML)
+  - `return RedirectToAction("Index");` (Redirige vers une autre action)
+  - `return Json(new { message = "Hello" });` (Retourne un JSON)
+  - `return NotFound();` (Retourne une erreur 404)
 
 ---
 
