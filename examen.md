@@ -58,5 +58,5 @@ L’application devra implémenter les fonctionnalités suivantes :
  
  **Dates de réalisation** : **19/05 et 20/05**
 
- **Vous présenterez votre projet via un support (powerpoint, markdown(?), slides ..), la durée de la présentation sera de 30 minutes par étudiant etquelques minutes pour que nous échangions ensemble.**
+ **Vous présenterez votre projet via un support (powerpoint, markdown(?), slides ..), la durée de la présentation sera de 30 minutes par étudiant et quelques minutes pour que nous échangions ensemble.**
 
