@@ -15,15 +15,15 @@ Ce tutoriel vous guidera pas à pas pour **intégrer Bootstrap** dans un projet 
 - Compatible avec tous les navigateurs et écrans (responsive).
 
 ### **Pourquoi utiliser Bootstrap ?**
-✔ Gain de temps grâce aux styles et composants prêts à l'emploi.  
-✔ Compatible avec HTML, CSS, et JavaScript sans dépendances lourdes.  
-✔ Permet de personnaliser facilement le design d'une application.  
+Gain de temps grâce aux styles et composants prêts à l'emploi.  
+Compatible avec HTML, CSS, et JavaScript sans dépendances lourdes.  
+Permet de personnaliser facilement le design d'une application.  
 
 ---
 
 ## Ajouter Bootstrap à l’application
 
-### **Méthode 1 : Via CDN **
+### **Méthode 1 : Via CDN**
 Ajoutez ces lignes dans le fichier **`Views/Shared/_Layout.cshtml`**, dans la balise `<head>` :
 
 ```html
