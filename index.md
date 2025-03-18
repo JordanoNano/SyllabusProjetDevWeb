@@ -17,6 +17,7 @@ Bienvenue dans le syllabus dédié au cours "Projet de développement WEB". Ce c
 3. [SQL Server](sqlServer.md)
 4. [MVC](MVC.md)
 5. [ADMIN - CRUD](CRUD.md)
+6. [Bootstrap](bootstrap.md)
 
 
 ### 1. [Visual Studio Code](visualStudioCode.md)
