@@ -198,7 +198,7 @@ namespace MonApplication.Data
 Dans le fichier `appsettings.json`, ajoutez la **chaîne de connexion** :
 ```json
 "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Database=ECommerceDB;Trusted_Connection=True;MultipleActiveResultSets=true";TrustServerCertificate=True"
+    "DefaultConnection": "Server=localhost;Database=ECommerceDB;Trusted_Connection=True;TrustServerCertificate=True"
 }
 ```
 
