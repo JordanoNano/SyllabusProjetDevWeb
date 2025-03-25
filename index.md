@@ -94,3 +94,5 @@ Si vous constatez une erreur ou si vous avez besoin de clarifications, n'hésite
 [Flebox](https://flexboxfroggy.com/#fr)
 
 [Bootstrap](https://getbootstrap.com/)
+
+[DataAnnotations](https://dotnetfullstackdev.medium.com/new-data-annotations-in-net-8-ef5d61813596)
