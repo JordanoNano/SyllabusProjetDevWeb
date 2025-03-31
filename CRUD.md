@@ -278,29 +278,7 @@ namespace MonApplication.Controllers
         // ---------------------------
         // POST: Suppression d’un utilisateur
         // ---------------------------
-        [HttpPost("delete/{id}")]
-        [ValidateAntiForgeryToken]
-        public IActionResult Delete(int id)
-        {
-            _logger.LogInformation(">>> Tentative de suppression utilisateur ID : {Id}", id);
-
-            // On tente de retrouver l'utilisateur à supprimer
-            var utilisateur = _context.Utilisateur.Find(id);
-            if (utilisateur == null)
-            {
-                _logger.LogWarning("Utilisateur introuvable : ID {Id}", id);
-                 // Renvoie une 404 si l'utilisateur n'existe pas
-                return NotFound();
-            }
-
-            // Suppression en db
-            _context.Utilisateur.Remove(utilisateur);
-            _context.SaveChanges();
-
-            _logger.LogInformation("Utilisateur supprimé : {Email}", utilisateur.Email);
-            // On revient à la liste après suppression
-            return RedirectToAction("List"); 
-        }
+         
 
         // ---------------------------
         // GET: Modification d’un utilisateur
