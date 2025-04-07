@@ -681,7 +681,7 @@ public IActionResult Edit(int id, UtilisateurEditViewModel vm)
 
 ```
 
-### Code de la vue qui crée
+### Code de la vue qui edit
 ```csharp
 @model MonApplication.ViewModels.UtilisateurEditViewModel
 
