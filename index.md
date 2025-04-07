@@ -21,6 +21,8 @@ Bienvenue dans le syllabus dédié au cours "Projet de développement WEB". Ce c
 6. [Bootstrap](bootstrap.md)
 7. [Evaluation certificative projet de développement WEB](examen.md)
 
+[TODO SEARCH](todoSearch.md)
+
 
 ### 1. [Visual Studio Code](visualStudioCode.md)
 Cette page fournit des informations sur l'installation et la configuration de **Visual Studio Code Code**, un éditeur de code léger mais puissant, utilisé pour le développement de notre projet. Vous y trouverez les étapes pour :
