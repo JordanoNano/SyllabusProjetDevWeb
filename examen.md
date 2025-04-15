@@ -52,6 +52,10 @@ L’application devra implémenter les fonctionnalités suivantes :
 - Développer les **contrôleurs, modèles et vues**.
 - Ajouter des **fonctionnalités dynamiques (CRUD, authentification, panier de formation, etc.).**
 
+###  **8. Ajout de produits au panier**
+- Créer la/les vues nécessaires à la gestion du panier.
+- Créer le controller.
+- Ajouter un plateforme de paiement 'test' (https://dashboard.stripe.com/ pour les plus motivés) ou vous pouvez créer des vues pour ByPasser ça
 ---
 
 ## Timing de l'examen
