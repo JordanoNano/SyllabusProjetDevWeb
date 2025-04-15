@@ -18,7 +18,7 @@ L’application devra implémenter les fonctionnalités suivantes :
 
 ##  2) Tâches demandées
 
-###  **1. Réaliser une analyse métier UML**
+~~###  **1. Réaliser une analyse métier UML**
 - Identifier les **acteurs**
 - Définir les **cas d’utilisation**
 - Créer le **diagramme de cas d'utilisation**.
@@ -26,7 +26,7 @@ L’application devra implémenter les fonctionnalités suivantes :
 ###  **2. Rechercher les classes d'analyse**
 - Identifier les **entités principales** du système.
 - Définir les **propriétés et identifiants** de chaque classe.
-- Créer le **diagramme de classes UML**.
+- Créer le **diagramme de classes UML**.~~
 
 ###  **3. Présenter le modèle logique**
 - Créer le **Modèle Conceptuel de Données (MCD)**.
