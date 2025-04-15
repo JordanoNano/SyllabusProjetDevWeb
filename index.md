@@ -20,6 +20,7 @@ Bienvenue dans le syllabus dédié au cours "Projet de développement WEB". Ce c
 5. [ADMIN - CRUD](CRUD.md)
 6. [Bootstrap](bootstrap.md)
 7. [Evaluation certificative projet de développement WEB](examen.md)
+8. [Horaire de passage examen](passage.md)
 
 [TODO SEARCH](todoSearch.md)
 
