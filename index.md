@@ -21,6 +21,7 @@ Bienvenue dans le syllabus dédié au cours "Projet de développement WEB". Ce c
 6. [Bootstrap](bootstrap.md)
 7. [Evaluation certificative projet de développement WEB](examen.md)
 8. [Horaire de passage examen](passage.md)
+9. [Auth](Auth.md)
 
 [TODO SEARCH](todoSearch.md)
 
