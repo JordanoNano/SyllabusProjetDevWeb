@@ -4,7 +4,7 @@ Dans le program.cs (point d'entrée de notre app)
 app.UseAuthentication();
 app.UseAuthorization();
 
-cs.html 
+cshtml 
 ```bash
 @{
     ViewData["Title"] = "Connexion";
