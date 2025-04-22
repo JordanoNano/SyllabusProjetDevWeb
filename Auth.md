@@ -5,6 +5,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 cs.html 
+```bash
 @{
     ViewData["Title"] = "Connexion";
 }
@@ -27,11 +28,11 @@ cs.html
         <div class="alert alert-danger mt-3">@ViewBag.Erreur</div>
     }
 </form>
-
+```
 
 
 controller : 
-
+```bash
 // Importation des outils nécessaires au MVC (Models, Controllers, Views)
 using System.Security.Claims; // Permet de créer des informations d'identité liées à un utilisateur (claims)
 using Microsoft.AspNetCore.Authentication; // Fournit les méthodes pour gérer l'authentification (connexion/déconnexion)
@@ -121,3 +122,4 @@ public class AuthController : Controller // Ce contrôleur gère tout ce qui tou
         return Content("Accès refusé");
     }
 }
+```
