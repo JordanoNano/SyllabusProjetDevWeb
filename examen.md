@@ -56,6 +56,9 @@ L’application devra implémenter les fonctionnalités suivantes :
 - Créer la/les vues nécessaires à la gestion du panier.
 - Créer le controller.
 - Ajouter un plateforme de paiement 'test' (https://dashboard.stripe.com/ pour les plus motivés) ou vous pouvez créer des vues pour ByPasser ça
+
+
+###  **9. N'oubliez pas de remettre une version papier (complète!) pour les archives 
 ---
 
 ## Timing de l'examen
